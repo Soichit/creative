@@ -1,0 +1,56 @@
+body {
+	background-color: #b5ccf2;
+	text-align: center;
+}
+
+header {
+	color: white;
+	font-weight: bold;
+}
+
+#profile {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+}
+
+#about {
+	margin-bottom: 30px;
+	background-color: white;
+	padding: 10px;
+}
+
+#about p {
+	font-style: italic;
+}
+
+#projects {
+	background-color: white;
+	padding: 10px;
+}
+
+#projects div {
+	border: 2px solid black;
+	padding-bottom: 10px;
+}
+
+#projects img {
+	width: 150px;
+	height: 150px;
+	border-radius: 15%;
+}
+
+#col1 {
+	float: left;
+	width: 33%;
+}
+
+#col2 {
+	float: left;
+	width: 33%;
+}
+
+#col3 {
+	width: 32%;
+	float: left;
+}
