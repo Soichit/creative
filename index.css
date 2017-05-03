@@ -9,6 +9,12 @@ header {
 	margin: 20px;
 }
 
+#about, #projects, #projects2, #location {
+	margin: 30px;
+	margin-bottom: 50px;
+	padding: 10px;
+}
+
 #profile {
 	margin: 5px;
 	width: 250px;
@@ -21,7 +27,6 @@ header {
 }
 
 #about {
-	margin-bottom: 30px;
 	background-color: white;
 	padding: 10px;
 }
@@ -67,4 +72,15 @@ header {
 
 .row {
 	margin-top: 30px;
+}
+
+#map {
+	height: 400px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#location {
+	background-color: white;
 }
