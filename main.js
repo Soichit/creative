@@ -8,6 +8,7 @@
             projectImgs[i].onmouseover=circleRadius;
             projectImgs[i].onmouseout=squareRadius;
         }
+        getGithubInfo();
         getDate();
         initMap();
     };
@@ -22,6 +23,21 @@
         this.style.borderRadius = "15%";
     }
 
+    function getGithubInfo() {
+        var ajaxPromise = new AjaxGetPromise("https://api.github.com/users/" + "soichit" + "?access_token=ac1a95ee0e39ea4e4e83b9d4304c1b2e2354fe4e");
+        //var ajaxPromise = new AjaxGetPromise("dates.php");
+        ajaxPromise
+            .then(JSON.parse)
+            .then(gotGithubInfo)
+            .catch(ajaxError);
+    }
+
+    function gotGithubInfo(obj) {
+        console.log(obj);
+        document.getElementById("githubBio").innerHTML = obj.bio;
+        document.getElementById("githubLocation").innerHTML = obj.location;
+    }
+
     function getDate() {
         var ajaxPromise = new AjaxGetPromise("dates.php?date=latest");
         //var ajaxPromise = new AjaxGetPromise("dates.php");
@@ -31,7 +47,7 @@
     }
 
     function gotDate(response) {
-        console.log(response);
+        //console.log(response);
         document.getElementById("updatedDate").innerHTML = response;
     }
 
