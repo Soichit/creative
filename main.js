@@ -23,7 +23,7 @@
     }
 
     function getDate() {
-        var ajaxPromise = new AjaxGetPromise("dates.php?base=2&exponent=6");
+        var ajaxPromise = new AjaxGetPromise("dates.php?date=latest");
         //var ajaxPromise = new AjaxGetPromise("dates.php");
         ajaxPromise
             .then(gotDate)
@@ -32,6 +32,7 @@
 
     function gotDate(response) {
         console.log(response);
+        document.getElementById("updatedDate").innerHTML = response;
     }
 
     function initMap() {        
