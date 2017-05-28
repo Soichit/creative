@@ -1,0 +1,1 @@
+w8: Using SQL: I created a MySQL database of the companies I worked in and appeneded that onto my homepage by using PHP and AJAX to retrieve that information from my database.

@@ -10,6 +10,7 @@
         }
         getGithubInfo();
         getDate();
+        getCompanies();
         initMap();
     };
 
@@ -33,14 +34,13 @@
     }
 
     function gotGithubInfo(obj) {
-        console.log(obj);
+        //console.log(obj);
         document.getElementById("githubBio").innerHTML = obj.bio;
         document.getElementById("githubLocation").innerHTML = obj.location;
     }
 
     function getDate() {
         var ajaxPromise = new AjaxGetPromise("dates.php?date=latest");
-        //var ajaxPromise = new AjaxGetPromise("dates.php");
         ajaxPromise
             .then(gotDate)
             .catch(ajaxError);
@@ -49,6 +49,26 @@
     function gotDate(response) {
         //console.log(response);
         document.getElementById("updatedDate").innerHTML = response;
+    }
+
+    function getCompanies() {
+        var ajaxPromise = new AjaxGetPromise("getCompanies.php");
+        ajaxPromise
+            .then(gotCompanies)
+            .catch(ajaxError);
+    }
+
+    function gotCompanies(response) {
+        var obj = JSON.parse(response);
+        console.log(obj);
+        var companyOl = document.createElement("ol");
+        for(var i = 0; i < obj.length; i++) {
+            console.log(obj[i].name);
+            var companyLi = document.createElement("li");
+            companyLi.innerHTML = obj[i].name;
+            companyOl.appendChild(companyLi);
+        }
+        document.getElementById("companiesList").appendChild(companyOl);
     }
 
     function initMap() {        

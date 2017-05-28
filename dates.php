@@ -1,16 +1,11 @@
 <?php
-# Allison Obourn
-
-
 
 header("Content-type: text/plain");
 
 if(!isset($_GET["date"])) {
-	print "please pass in a date";
+	echo "please pass in a date";
 } else {
 	//$dates = file_get_contents("dates.txt");
-	header("Content-type: text/plain");
-
 	$dates = file("dates.txt", FILE_IGNORE_NEW_LINES);
 	header("Content-type: text/plain");
 	if ($_GET["date"] == "latest") {
